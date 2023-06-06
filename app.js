@@ -1,6 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const userRouter = require("./routes/userRoutes");
+const seedUserRouter = require("./routes/seedUserRoute");
 
 
 //initialize express app
@@ -14,6 +15,7 @@ app.use(express.urlencoded({extended:true}));
 
 //router
 app.use("/api/user",userRouter);
+app.use("/api/seed",seedUserRouter);
 
 app.get("/",(req,res)=>{
     res.status(200).send("running correctly")
