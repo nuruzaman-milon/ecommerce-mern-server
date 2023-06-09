@@ -15,6 +15,8 @@ app.use(express.urlencoded({extended:true}));
 
 //router
 app.use("/api/user",userRouter);
+
+//user seed router
 app.use("/api/seed",seedUserRouter);
 
 app.get("/",(req,res)=>{
