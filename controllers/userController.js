@@ -1,5 +1,6 @@
 const { successResponse, errorResponse } = require('../helpers/response');
 const UserModel = require('../models/userModel');
+const { FindItemById } = require('../services/findItemById');
 const user = require('../user');
 
 const getAllUser = async(req,res)=>{
@@ -42,6 +43,12 @@ const getAllUser = async(req,res)=>{
 }
 
 
+const getSingleUser = async(req,res) =>{
+    const id = req.params.id;
+    FindItemById(id, res, UserModel, "User"); // use service to find any item by its id
+}
+
+
 const createAllUserToDb = async(req,res)=>{
     try {
         const userData = user;
@@ -58,4 +65,4 @@ const createAllUserToDb = async(req,res)=>{
 
 
 
-module.exports = {getAllUser,createAllUserToDb}
+module.exports = {getAllUser, getSingleUser, createAllUserToDb}

@@ -14,10 +14,10 @@ app.use(express.urlencoded({extended:true}));
 
 
 //router
-app.use("/api/user",userRouter);
+app.use("/api/v1/user",userRouter);
 
 //user seed router
-app.use("/api/seed",seedUserRouter);
+app.use("/api/v1/seed",seedUserRouter);
 
 app.get("/",(req,res)=>{
     res.status(200).send("running correctly")
