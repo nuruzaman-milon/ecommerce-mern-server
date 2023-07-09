@@ -7,7 +7,7 @@ const FindItemById = async (id, res, Model, text) =>{
             successResponse(res,{statusCode: 200, message: `${text} found successfully`}, data)
         }
     } catch (error) {
-        errorResponse(res, 200, `${text} not found! try again..`)
+        errorResponse(res, 404, `${text} not found! try again..`)
     }
 }
 
